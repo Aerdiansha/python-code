@@ -1,0 +1,35 @@
+# program inputan data KTP dari User
+
+a = "!===========================INPUT========================!"
+b = "!==========================OUTPUT========================!"
+c = "!=======================END OF LINE======================!"
+
+print(a)
+nama = input("Masukkan nama : ")
+ttl = input("Masukkan tempat/Tanggal lahir: ")
+JK = input("Masukkan jenis kelamin: ")
+alamat = input("Masukkan alamat: ")
+rt_rw = input("\t RT/RW: ")
+kel_desa = input("\t Kel/Desa: ")
+kec = input("\t Kecamatan: ")
+agama = input("Masukkan agama: ")
+SP = input("Masukkan Status Perkawinan: ")
+kerja = input("Masukkan Pekerjaan: ")
+wn = input("Masukkan Kewarganegaraan: ")
+Sk = input("Masa Berlaku hingga: ")
+print(b)
+print("\t\tPROVINSI JAWA BARAT")
+print("\t\t   KOTA BANDUNG\n")
+print("Nama\t\t\t : ", nama)
+print("Tempat/Tgl Lahir\t : ", ttl)
+print("Jenis Kelamin\t\t : ", JK)
+print("Alamat\t\t\t : ", alamat)
+print("\t RT/RW\t\t : ", rt_rw)
+print("\t kel/Desa\t : ", kel_desa)
+print("\t Kecamatan\t : ", kec)
+print("Agama\t\t\t : ", agama)
+print("Status Perkawinan\t : ", SP)
+print("Pekerjaan\t\t : ", kerja)
+print("Kewarganegaraan\t\t : ", wn)
+print("Masa Berlaku\t\t : ", Sk)
+print(c)
