@@ -4,7 +4,7 @@ import random # melakukan import module random ke dalam program
 
 kesempatan = 0 # Variable kesempatan dengan nilai 0 (nol)
 
-print("\t\trtSELAMAT DATANG DI PROGRAM TEBAK NOMOR \n")
+print("\t\tSELAMAT DATANG DI PROGRAM TEBAK NOMOR \n")
 print("Silahkan masukkan nama : ")
 nama = input() # inputan nama dari user
 
