@@ -1,5 +1,4 @@
 # program menebak angka Random
-
 import random # melakukan import module random ke dalam program
 
 kesempatan = 0 # Variable kesempatan dengan nilai 0 (nol)
@@ -8,7 +7,7 @@ print("\t\tSELAMAT DATANG DI PROGRAM TEBAK NOMOR \n")
 print("Silahkan masukkan nama : ")
 nama = input() # inputan nama dari user
 
-number = random.randint(1, 10) # variable number dengan nilai module random.randint(param1, param2)
+number = random.randint(1, 100) # variable number dengan nilai module random.randint(param1, param2)
 
 print("Saya sedang memikirkan sebuah angka dari 1 sampai 10, bisakah " + nama + " menebak")
 
