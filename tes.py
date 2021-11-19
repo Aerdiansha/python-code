@@ -1,24 +1,29 @@
-# tipe data:
-# string = huruf, alfabet "a b c 5 "
-# integer = bilangan bulat 125
-# float = bilangan desimal 9.78
+# Import the required libraries
+from tkinter import *
 
-# Dua variable berbeda
-# NamaLenkap = "==========="
-# namalengkap = "------------"
+# Create an instance of tkinter frame or window
+win=Tk()
 
-# Operasi aritmatika
-# print(8+2)
-# print(8-2)
-# print(8*2)
-# print(8/2)
-# print("8%2")
+# Set the size of the tkinter window
+win.geometry("700x350")
 
-# boolean
-#True = benar
-#False = salah
+def cal_sum():
+   t1=int(a.get())
+   t2=int(b.get())
+   sum=t1+t2
+   label.config(text=sum)
 
-terlambat = False
+# Create an Entry widget
+Label(win, text="Enter First Number", font=('Calibri 10')).pack()
+a=Entry(win, width=35)
+a.pack()
+Label(win, text="Enter Second Number", font=('Calibri 10')).pack()
+b=Entry(win, width=35)
+b.pack()
 
-if terlambat:
-    print("gak boleh masuk")
+label=Label(win, text="Total Sum : ", font=('Calibri 15'))
+label.pack(pady=20)
+
+Button(win, text="Calculate Sum", command=cal_sum).pack()
+
+win.mainloop()

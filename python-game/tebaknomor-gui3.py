@@ -1,16 +1,19 @@
 from tkinter import *
 import random
 
+# windows utama
 ws = Tk()
-ws.title('PythonGuides')
+ws.title('Game Tebak Nomor')
 ws.geometry('600x400')
 ws.config(bg='#5671A6')
 
+# variable random
 ranNum = random.randint(0, 10)
 chance = 5
 var = IntVar()
 disp = StringVar()
 
+# fungsi utama tebak nomor
 def check_guess():
     global ranNum
     global chance
@@ -26,13 +29,13 @@ def check_guess():
             msg = f'{usr_ip} is smaller. You have {chance} attempt left.'
         else:
             msg = 'Something went wrong!'
-    else:
+    elif chance <= 0:
         msg = f'You Lost!\nthe right number is {ranNum}'
-
 
     disp.set(msg)
 
 
+# label-label windows
 Label(
     ws,
     text='PROGRAM MENEBAK NOMOR ACAK',
@@ -47,9 +50,9 @@ Entry(
     ws,
     textvariable=var,
     font=('sans-serif', 18)
-).pack(pady=(50, 10))
+).pack()
 
-Button(
+checkNumber = Button(
     ws,
     text='Masukkan tebakan',
     font=('sans-serif', 18),

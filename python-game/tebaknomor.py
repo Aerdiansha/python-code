@@ -3,7 +3,7 @@ import random # melakukan import module random ke dalam program
 
 kesempatan = 0 # Variable kesempatan dengan nilai 0 (nol)
 
-print("\t\tSELAMAT DATANG DI PROGRAM TEBAK NOMOR \n")
+print("\t\tSELAMAT DATANG DI GAME TEBAK NOMOR \n")
 print("Silahkan masukkan nama : ")
 nama = input() # inputan nama dari user
 
@@ -31,9 +31,9 @@ while kesempatan < 6: # kesempatan sebanyak 5 kali
 
 if tebak == number:
     kesempatan = str(kesempatan)
-    print("Selamat " + nama + "kamu berhasil menebaknya dengan " + kesempatan + " kali.")
+    print("Selamat " + nama + " kamu berhasil menebak nomor " + str(number) + " dengan menebak sebanyak " + kesempatan + " kali.")
 
 if tebak != number:
     number = str(number)
-    print("Nilai yang saya maksud adalah " + number)
+    print("Nomor yang dimaksud adalah " + number)
 

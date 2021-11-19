@@ -18,20 +18,20 @@ window.title('Number Guessing Game')
 # The code for the buttons and text and other 
 # interactive UI elements go here 
  
-TARGET = random.randint(0, 1000)
+TARGET = random.randint(0, 10)
 RETRIES = 0
  
  
-def upate_result(text):
+def update_result(text):
     result.configure(text=text)
  
 # Create a new game
 def new_game():
     guess_button.config(state='normal')
     global TARGET, RETRIES
-    TARGET = random.randint(0, 1000)
+    TARGET = random.randint(0, 10)
     RETRIES = 0
-    update_result(text="Guess a number between\n 1 and 1000")
+    update_result(text="Guess a number between\n 1 and 10")
  
 # Continue the ongoing game or end it
 def play_game():
@@ -44,9 +44,9 @@ def play_game():
      
         result = "Wrong Guess!! Try Again"
         if TARGET < choice:
-            hint = "The required number lies between 0 and {}".format(result)
+            hint = "The required number lies between 0 and {}".format(TARGET)
         else:
-            hint = "The required number lies between {} and 1000".format(choice)
+            hint = "The required number lies between {} and 10".format(choice)
         result += "\n\nHINT :\n" + hint
      
     else:
@@ -57,13 +57,24 @@ def play_game():
     update_result(result)
  
 # Heading of our game
-title = tk.Label(window,text="Guessing Game",font=("Arial",24),fg="#fffcbd",bg="#065569")
+title = tk.Label(window,
+                 text="Guessing Game",
+                 font=("Arial",24),
+                 fg="#fffcbd",
+                 bg="#065569")
  
 # Result and hints of our game
-result = tk.Label(window, text="Click on Play to start a new game", font=("Arial", 12, "normal", "italic"),fg = "White", bg="#065569", justify=tk.LEFT)
+result = tk.Label(window, 
+                  text="Click on Play to start a new game", 
+                  font=("Arial", 12, "normal", "italic"),fg = "White", bg="#065569", justify=tk.LEFT)
  
 # Play Button
-play_button = tk.Button(window, text="Play Game", font=("Arial", 14, "bold"), fg = "Black", bg="#29c70a", command=new_game)
+play_button = tk.Button(window,
+                        text="Play Game", 
+                        font=("Arial", 14, "bold"), 
+                        fg = "Black", 
+                        bg="#29c70a", 
+                        command=new_game)
  
 # Guess Button
 guess_button = tk.Button(window,text="Guess",font=("Arial",13), state='disabled', fg="#13d675",bg="Black", command=play_game)
@@ -78,7 +89,6 @@ number_form = tk.Entry(window,font=("Arial",11),textvariable=guessed_number)
  
  
 # Place the labels
- 
 title.place(x=170, y=50)
 result.place(x=180, y=210)
  
