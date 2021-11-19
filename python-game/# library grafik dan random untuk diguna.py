@@ -20,14 +20,16 @@ def cekJawaban():
    kesempatan -= 1
 
    # variable untuk menampung inputan player yang ada di kotak jawaban
-   nomorTebakan = float(kotakJawaban.get())
+
 
 # operator if-else utama untuk mengecek apakah player menebak nomor yang benar atau salah
-   
-   # jika player menebak benar maka akan menang
+   try:
+      nomorTebakan = float(kotakJawaban.get())
+   except ValueError:
+        text.set("Jawaban kamu bukan angka - coba lagi\n kamu punya " + str(kesempatan) +" sisa kesempatan")
+
    if nomorJawaban == nomorTebakan:
       text.set("Selamat! Kamu menang! \njawaban yang benar = " + str(nomorJawaban))
-      tombolCek.pack_forget()
    # jika player kehabisan kesempatan maka tidak dapat menebak kembali
    elif kesempatan == 0:
       text.set("GAME OVER!\nKamu kehabisan kesempatan menebak \njawaban yang benar = " + str(nomorJawaban))
@@ -75,5 +77,5 @@ textUpdate.pack()
 versiGame = Label(root, text="v0.0.1 \ndibuat oleh kelompok 1")
 versiGame.pack(pady=20)
 
-# program akhiran dari grafik utama windows
+# program akhiran dari grafis utama windows
 root.mainloop()

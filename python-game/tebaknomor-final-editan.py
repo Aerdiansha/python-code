@@ -10,34 +10,33 @@ kesempatan = 3
 # variable dengan nilai acak untuk nanti ditebak oleh player
 nomorJawaban = random.randint(1, 10)
 
-# Fungsi utama dari game
+def awalAkhir():
+    pass
+
 def cekJawaban():
-   # mengambil variable diluar fungsi untuk dapat digunakan di fungsi def
    global kesempatan
    global text
 
-   # setiap kali player salah menebak akan mengurangi kesempatan satu per satu
    kesempatan -= 1
 
-   # variable untuk menampung inputan player yang ada di kotak jawaban
-   nomorTebakan = float(kotakJawaban.get())
+   try:
+      nomorTebakan = float(kotakJawaban.get())
+   except ValueError:
+      text.set("Jawaban kamu bukan angka atau tidak mengisi - coba lagi\n kamu punya sisa " + str(kesempatan) +" kesempatan")
+      if kesempatan == 0:
+          text.set("GAME OVER!\nkamu tidak memberikan jawaban yang benar")
+          tombolCek.pack_forget()
 
-# operator if-else utama untuk mengecek apakah player menebak nomor yang benar atau salah
-   
-   # jika player menebak benar maka akan menang
+
    if nomorJawaban == nomorTebakan:
       text.set("Selamat! Kamu menang! \njawaban yang benar = " + str(nomorJawaban))
-      tombolCek.pack_forget()
-   # jika player kehabisan kesempatan maka tidak dapat menebak kembali
    elif kesempatan == 0:
       text.set("GAME OVER!\nKamu kehabisan kesempatan menebak \njawaban yang benar = " + str(nomorJawaban))
       tombolCek.pack_forget()
       kotakJawaban.delete(0, END)
-   # jika player menebak angka kurang maka akan salah dan diberikan petunjuk dan sisa kesempatan
    elif nomorTebakan < nomorJawaban:
       text.set(" Jawaban salah - kamu punya sisa " + str(kesempatan) + " kesempatan - \nHINT: Coba nomor lebih tinggi")
       kotakJawaban.delete(0, END)
-   # jika player menebak angka lebih maka akan salah dan diberikan petunjuk dan sisa kesempatan
    elif nomorTebakan > nomorJawaban:
       text.set(" Jawaban salah - kamu punya sisa " + str(kesempatan) + " kesempatan - \nHINT: Coba nomor lebih rendah")
       kotakJawaban.delete(0, END)
@@ -48,7 +47,7 @@ root.title("GAME TEBAK NOMOR") # judul dari programnya
 root.geometry("325x250") # lebar dan tinggi dari programnya
 root.resizable(False, False)
 
-# text instruksi awalan ketika memulai game 
+# text instruksi awalan ketika memulai game
 instruksi = Label(root, text="Tebaklah nomor dari 1 sampai 10")
 instruksi.pack()
 
@@ -75,5 +74,5 @@ textUpdate.pack()
 versiGame = Label(root, text="v0.0.1 \ndibuat oleh kelompok 1")
 versiGame.pack(pady=20)
 
-# program akhiran dari grafik utama windows
+# program akhiran dari grafis utama windows
 root.mainloop()
