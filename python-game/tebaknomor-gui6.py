@@ -35,7 +35,6 @@ def check_answer():
         text.set("Incorrect! - You have " + str(attempts) + " remaining - Go lower!")
         # Clearing the input box for next attempt.
         entry_window.delete(0, END)
-    return
 
 
 root = Tk()
