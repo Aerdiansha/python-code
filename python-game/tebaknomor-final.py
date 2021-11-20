@@ -19,8 +19,14 @@ def cekJawaban():
    # setiap kali player salah menebak akan mengurangi kesempatan satu per satu
    kesempatan -= 1
 
-   # variable untuk menampung inputan player yang ada di kotak jawaban
-   nomorTebakan = float(kotakJawaban.get())
+   try:
+      nomorTebakan = float(kotakJawaban.get())
+   except ValueError:
+      text.set("Coba gunakan angka!\n kamu punya sisa " + str(kesempatan) +" kesempatan")
+      kotakJawaban.delete(0, END)
+      if kesempatan == 0:
+          text.set("GAME OVER!\nkamu tidak memberikan jawaban yang benar")
+          tombolCek.pack_forget()
 
 # operator if-else utama untuk mengecek apakah player menebak nomor yang benar atau salah
    
