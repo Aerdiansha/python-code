@@ -1,52 +1,25 @@
-# module/library
-import tkinter as tk
-import random
+# Program to display the Fibonacci sequence up to n-th term
 
-# Windows utama
-root = tk.Tk()
-root.title("Game")
-root.geometry('600x400')
-root.config(bg='#065569')
-root.resizable(width=False, height=True)
+angka = int(input("Berapa banyak angka yang mau ditampilkan? "))
 
-# variabel
-kesempatan = 10
-hint = StringVar()
+# first two terms
+nilai1, nilai2 = 0, 1
+hitungan = 0
 
-
-
-# Fungsi - fungsi
-def NumGuessGame():
-    global Number
-
-
-
-# widget-widget
-title = tk.Label(root,
-                 text="Selamat Datang di Game Tebak Nomor",
-                 font=("Times New Roman",24),
-                 fg="#ffffff",
-                 bg="#065569",
-                 padx=10,
-                 pady=0,
-                 )
-
-jawabanEntry = tk.Entry(root,
-                        font=("Times New Roman,", 12),
-                        )
-tombolJawaban = tk.Button(root,
-                          font=("Times New Roman,", 12),
-                          text="Tebak!",
-                          padx=0,
-                          pady=0,
-                          command=NumGuessGame())
-
-# posisi widget
-title.pack()
-jawabanEntry.place(x=200, y=55)
-tombolJawaban.place(x=390,y=55)
-
-# Akhiran windows
-root.mainloop()
-
-
+# check if the number of terms is valid
+if nterms <= 0:
+   print("angka tidak boleh 0 atau negatif")
+# if there is only one term, return n1
+elif nterms == 1:
+   print("Fibonacci sequence upto",nterms,":")
+   print(n1)
+# generate fibonacci sequence
+else:
+   print("Fibonacci sequence:")
+   while count < nterms:
+       print(n1)
+       nth = n1 + n2
+       # update values
+       n1 = n2
+       n2 = nth
+       count += 1
